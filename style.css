@@ -1,0 +1,196 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Gradiente que remete ao céu e ao mar, comuns nas histórias do Stitch */
+    background: linear-gradient(to bottom, #7EC8E3 0%, #36A9E1 50%, #1F97C7 100%);
+    background-image: url('/fotos/papel-de-parede.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.header h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 2.5em; /* Ajuste o tamanho conforme necessário */
+    color: #0077CC; /* Cor azul que combina com o tema do Stitch */
+    text-align: center; /* Centraliza o título */
+    margin: 20px 0; /* Adiciona margem acima e abaixo do título */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    background: rgba(255,255,255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+    position: relative; /* Necessário para posicionar corretamente o pseudo-elemento */
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    color: #0077CC;
+    margin-top: 20px; /* Espaço acima do título */
+    margin-bottom: 10px; /* Espaço abaixo do título, antes de #quotes */
+}
+
+.fotos {
+    position: relative; /* Necessário para o posicionamento absoluto */
+    margin-top: 0px; /* Espaço acima do mural */
+    height: 400px; /* Altura do mural */
+    overflow: hidden; /* Esconde as fotos que ultrapassam o mural */
+}
+
+.mural-photo {
+    width: 14%; /* Ajuste conforme necessário */
+    position: absolute;
+    transform: rotate(-5deg); /* Rotação inicial */
+    transition: transform 0.4s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.mural-photo:nth-child(2n) {
+    transform: rotate(5deg); /* Rotação alternativa para fotos pares */
+}
+
+/* Posicionamentos específicos para cada foto */
+.mural-photo:nth-child(1) { top: 10%; left: 30%; }
+.mural-photo:nth-child(2) { top: 20%; left: 50%; }
+.mural-photo:nth-child(3) { top: 30%; left: 20%; }
+.mural-photo:nth-child(4) { top: 40%; left: 60%; }
+.mural-photo:nth-child(5) { top: 50%; left: 40%; }
+.mural-photo:nth-child(6) { top: 60%; left: 30%; }
+
+/* Efeito de hover para animar ligeiramente as fotos */
+.mural-photo:hover {
+    transform: scale(1.2);
+}
+
+.section h2 {
+    color: #005FAF; /* Azul mais escuro para contraste */
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-family: 'Comic Sans MS', 'Helvetica Neue', Arial, sans-serif;
+    color: #33A1C9; /* Azul claro aquático */
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: justify;
+    margin: 20px auto;
+    margin-top: 20px;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #E0FFFF; /* Cor de fundo azul muito suave */
+    border-left: 5px solid #33A1C9; /* Borda esquerda azul como detalhe sutil */
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.2); /* Sombra um pouco mais pronunciada para profundidade */
+}
+
+#about h2 {
+    text-align: center; /* Centraliza o texto do h2 */
+    margin-top: 20px; /* Adiciona uma margem no topo para espaçamento */
+    margin-bottom: 20px; /* Adiciona uma margem na parte inferior para espaçamento */
+    color: #0077CC; /* Azul do Stitch */
+}
+
+.section h2, #about h2 {
+    font-family: 'Pacifico', cursive; /* Atualiza a fonte para Pacifico */
+}
+
+#quotes {
+    text-align: center;    
+    font-family: 'Nunito', sans-serif; /* Atualiza a fonte para Nunito */
+    color: #005F99; /* Mantém o azul suave para o texto */
+    border: 2px solid #005F99; /* Mantém a borda */
+    padding: 20px; /* Mantém o espaçamento interno */
+    padding-bottom: 60px; /* Aumenta o espaço no fundo para acomodar os indicadores */
+    border-radius: 10px; /* Mantém as bordas arredondadas */
+    background-color: #B3E5FC; /* Mantém o azul claro do Stitch para o fundo */
+    margin-bottom: 40px; /* Aumenta o espaço abaixo das frases antes dos indicadores */
+    max-width: 800px; /* Mantém o ajuste para uma largura menor */
+    margin: 20px auto; /* Ajusta a margem para centralizar */
+    position: relative; /* Necessário para o posicionamento absoluto dos indicadores */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destacar */
+    height: auto; /* Permite que a altura se ajuste automaticamente ao conteúdo */
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px; /* Ajusta para manter dentro da caixa */
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding-top: 10px; /* Espaço acima dos indicadores */
+    padding-bottom: 10px; /* Ajusta o espaço para a margem de baixo */
+    display: flex; /* Usa Flexbox para centralizar */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente (se necessário) */
+}
+
+.carousel-indicators > li, .carousel-indicators div{
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    background-color: #005F99; /* Remove o fundo padrão */
+    margin: 0 5px; /* Mantém o espaçamento entre os indicadores */
+    width: 10px; /* Largura dos indicadores */
+    height: 10px; /* Altura dos indicadores */
+    border-radius: 50%; /* Torna os indicadores circulares */
+    display: inline-block; /* Permite que os indicadores sejam exibidos em linha */
+    transition: all;
+}
+
+
+.carousel-indicators div {
+    background-color: #005F99; /* Rosa mais vibrante para os indicadores */
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px; /* Mantém o espaçamento entre os indicadores */
+    transition: all 0.5s ease; /* Mantém a transição suave para mudanças de estado */
+}
+
+.carousel-indicators div.active {
+    width: 12px;
+    height: 12px;
+    background-color: #000 /* preto mais escuro para contrast */
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+}
+
+/*.carousel-control.left {
+    left: 0;
+    padding-right: 50px;
+}
+
+.carousel-control.right {
+    right: 0;
+    padding-left: 50px;
+}
+
+.carousel-control:hover {
+    color: #666;
+}
+
+.carousel-control img{
+    width: 20px;
+    height: auto;
+}
+
+.carousel-control.right img{
+    width: 27px;
+    height: auto;
+}
+    */
